@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>dear 小仙女</title>
+  <link href="./default.css" type="text/css" rel="stylesheet">
+  <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.0.0/jquery.slim.min.js"></script>
+  <style type="text/css" abt="234"></style>
+  <script type="text/javascript" src="./garden.js"></script>
+  <script type="text/javascript" src="./functions.js"></script>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <div id="content" style="width: 1110px; height: 625px; margin-top: 27.5px; margin-left: 83px;">
+      <div id="code" style="margin-top: 112.5px;">
+        <span class="comments"></span><br>
+        <span class="space comments">天上飘着些微云，</span><br>
+        <span class="space comments">地上吹着些微风。</span><br>
+        <span class="space comments">啊！</span><br>
+        <span class="space comments">微风吹动了我的头发，</span><br>
+        <span class="space comments">教我如何不想她？</span><br><br>
+        <span class="space comments">月光恋爱着海洋，</span><br>
+        <span class="space comments">海洋恋爱着月光。</span><br>
+        <span class="space comments">啊！</span><br>
+        <span class="space comments">这般蜜也似的银夜，</span><br>
+        <span class="space comments">教我如何不想她？</span><br><br>
+        <span class="space comments">水面落花慢慢流，</span><br>
+        <span class="space comments">水底鱼儿慢慢游。</span><br>
+        <span class="space comments">啊！</span><br>
+        <span class="space comments">燕子你说些什么话？</span><br>
+        <span class="space comments">教我如何不想她？</span><br><br>
+        <span class="space comments">枯树在冷风里摇，</span><br>
+        <span class="space comments">野火在暮色中烧。</span><br>
+        <span class="space comments">啊！</span><br>
+        <span class="space comments">西天还有些儿残霞，</span><br>
+        <span class="space comments">教我如何不想她？</span><br>_
+      </div>
+      <div id="loveHeart">
+        <canvas id="garden" width="670" height="625"></canvas>
+        <div id="words" style="position: absolute; top: 356.5px; left: 764px;">
+          <div id="messages" style="display: block;">
+            教我如何不想她
+            <div id="elapseClock"><span class="digit">181</span> days <span class="digit">16</span> hours
+              <span class="digit">53</span> minutes <span class="digit">23</span> seconds</div>
+          </div>
+          <div id="loveu" style="display: block;">
+            天青色等烟雨，而我在等你.<br>
+            <div class="signature"> - 王先生</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <audio src="./love.mp3" id="music" autoplay="autoplay"></audio> -->
+  <script type="text/javascript">
+    var offsetX = $("#loveHeart").width() / 2;
+    var offsetY = $("#loveHeart").height() / 2 - 55;
+    var together = new Date();
+    together.setFullYear(2019, 12, 26);
+    together.setHours(22);
+    together.setMinutes(30);
+    together.setSeconds(0);
+    together.setMilliseconds(0);
+
+    if (!document.createElement('canvas').getContext) {
+      var msg = document.createElement("div");
+      msg.id = "errorMsg";
+      msg.innerHTML =
+        "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+      document.body.appendChild(msg);
+      $("#code").css("display", "none")
+      $("#copyright").css("position", "absolute");
+      $("#copyright").css("bottom", "10px");
+      document.execCommand("stop");
+    } else {
+      setTimeout(function () {
+        startHeartAnimation();
+      }, 5000);
+
+      timeElapse(together);
+      setInterval(function () {
+        timeElapse(together);
+      }, 500);
+
+      adjustCodePosition();
+      $("#code").typewriter();
+    }
+  </script>
+</body>
+
+</html>
